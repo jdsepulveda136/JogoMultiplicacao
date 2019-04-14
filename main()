@@ -1,0 +1,48 @@
+// JogoMultiplicacao
+// 14/04/2019
+// Jorge Sepúlveda
+
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+	int contador, operando1, operando2, resposta;
+
+	srand(time(NULL));
+
+	contador = 0; 
+
+	do
+	{
+		operando1 = rand() % 10 + 1;
+		operando2 = rand() % 10 + 1;
+
+		cout << operando1 << " x " << operando2 << "?" << endl;
+		cin >> resposta;
+
+		if (operando1*operando2==resposta)
+		{
+			contador = contador + 1;
+			//cout << "contador" << contador << endl;
+		}
+		else
+		{
+			contador = contador - 2;
+			
+			if (contador < 0)
+			{
+				contador = 0;
+			}
+
+			//cout << "contador" << contador << endl;
+		}
+
+	} while (contador<3);
+
+	//cout << contador << endl;
+	
+	cout << "Parabens, acertaste 3 vezes.";
+
+}
